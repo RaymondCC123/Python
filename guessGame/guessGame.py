@@ -12,7 +12,6 @@ score=scores.get(name)
 if score==None :
     score=[0,0,0]
 
-#score=f.read().split(' ')
 game_times=int(score[0])
 min_times = int(score[1])
 total_times = int(score[2])
