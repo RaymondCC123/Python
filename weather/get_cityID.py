@@ -2,13 +2,13 @@ import urllib2
 
 url1 = 'http://m.weather.com.cn/data5/city.xml'
 content1 = urllib2.urlopen(url1).read()
-#print content1
+print content1
 provinces = content1.split(',') #split elements
 #print provinces[1]
 
 eles = []
 cities = []
-result = {}
+result = {}# define dictionary
 #result = 'city = {\n'
 
 url = 'http://m.weather.com.cn/data3/city%s.xml'# grab city_info in each province
@@ -16,7 +16,7 @@ for i in provinces[1:2]:
     eles = i.split('|')
     url2 = url % (eles[0])
     content2 = urllib2.urlopen(url2).read()
-    #print content2
+    print content2
     cities = content2.split(',')
 
     for c in cities:# grap district info in each city
